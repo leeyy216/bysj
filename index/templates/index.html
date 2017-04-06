@@ -41,9 +41,12 @@
 		body{
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-size: 14px;
+			font-weight: bold;
 			line-height: 1.428571429;
 			color: #333333;
 			background-color: #ffffff;
+			padding: 50px;
+			margin: 20px;
 		}
 
 		a:link{ font-size: 18px; color: #3d3b4f; }
@@ -55,6 +58,7 @@
 			padding-left: 15px;
 			margin-right: auto;
 			margin-left: auto;
+			width: 75%;
 		}
 		.container:before,
 		.container:after{
@@ -62,6 +66,7 @@
 			content: " ";
 		}
 		.center{ text-align: center; }
+		.toright{ vertical-align: }
 		</style>
 
 
@@ -71,8 +76,31 @@
 	</head>
 
 	<body>
-		<p class="center">欢迎使用上海市高中自主招生信息收集系统！</p>
+		<h1 class="center" id="welcometitle">欢迎使用上海市高中自主招生信息收集系统！</h1>
 
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">自主招生信息收集系统</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">信息查询</a></li>
+					<li><a href="#">信息统计</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							导出
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">导出为excel文件</a></li>
+							<li><a href="#">导出为xml文件</a></li>
+							<li class="divider"></li>
+							<li><a href="#">导出为其他格式</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
 		<span class="button-dropdoen button-dropdown-plain" data-buttons="dropdown">
 			<button class="button button-caution button-pill">导出<i class="fa fa-caret-down"></i>
 			</button>
@@ -96,6 +124,72 @@
     			</ul>
   			</li>
 		</ul>
+		<div class="container">
+			<div class="btn-group">
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
+					导出 
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">导出成exl</a></li>
+				<li><a href="#">导出成xml</a></li>
+					<li><a href="#">others</a></li>
+					<li class="divider"></li>
+					<li><a href="#">自定义导出</a></li>
+					
+				</ul>
+			</div>
+		
+		<div class="panel-group" id="accordion">
+  			<div class="panel panel-default">
+   				<div class="panel-heading">
+     				<h4 class="panel-title">
+        				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">点击我进行展开，再次点击我进行折叠。第 1 部分
+        				</a>
+      				</h4>
+    			</div>
+    			<div id="collapseOne" class="panel-collapse collapse in">
+      				<div class="panel-body"> Nihil anim keffiyeh helvetica, 
+      					craft beer labore wes anderson
+      					cred nesciunt sapiente ea proident. 
+      					Ad vegan excepteur butcher vice lomo.
+      				</div>
+    			</div>
+ 			</div>
+  			<div class="panel panel-default">
+   	 			<div class="panel-heading">
+      				<h4 class="panel-title">
+        				<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          					点击我进行展开，再次点击我进行折叠。<br>第 2 部分
+          				</a>
+      				</h4>
+    			</div>
+    			<div id="collapseTwo" class="panel-collapse collapse">
+      				<div class="panel-body">
+        				Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+        				cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+        				vice lomo.
+      				</div>
+    			</div>
+  			</div>
+  			<div class="panel panel-default">
+    			<div class="panel-heading">
+      				<h4 class="panel-title">
+        				<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          					点击我进行展开，再次点击我进行折叠。第 3 部分
+          				</a>
+      				</h4>
+    			</div>
+    			<div id="collapseThree" class="panel-collapse collapse">
+      				<div class="panel-body">
+        				Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+       		 			cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+        				vice lomo.
+      				</div>
+    			</div>
+  			</div>
+		</div>
+		</div>
 
 	</body>
 
