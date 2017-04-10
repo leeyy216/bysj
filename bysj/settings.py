@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'index',
     'datatable',
+    'importfile',
+    'exportfile',
     
 ]
 

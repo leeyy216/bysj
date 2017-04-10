@@ -16,12 +16,16 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from index import views as index_views
-
+from importfile import views as importfile_views
+from exportfile import views as exportfile_views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home/',index_views.index, name='index'),
+    url(r'^home/', index_views.index, name='index'),
+    url(r'^import/', importfile_views.importfile, name='importfile'),
+    url(r'^export/', exportfile_views.exportfile, name='exportfile'),
+    
 
 ] #+ static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

@@ -1,0 +1,23 @@
+<!DOCTYPE html><!--0410-->
+<html>
+
+<head>
+	<title>
+		{% block title %}默认标题{% endblock %} -- 李元祎
+	</title>
+</head>
+
+<body>
+	{% include 'nav.html' %}
+
+	{% block content %}
+
+	<div>default content</div>
+
+	{% endblock %}
+
+	{% include 'bottom.html' %}
+
+</body>
+
+</html>
