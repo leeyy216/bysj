@@ -5,6 +5,10 @@
 	<title>
 		{% block title %}默认标题{% endblock %} -- 李元祎
 	</title>
+
+	<!--百度静态资源库chart.js-->
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/Chart.js/0.2.0/Chart.min.js"></script>
+	{% block customerstyle %}{% endblock %}
 </head>
 
 <body>
@@ -16,7 +20,7 @@
 
 	{% endblock %}
 
-	{% include 'bottom.html' %}
+	
 
 </body>
 

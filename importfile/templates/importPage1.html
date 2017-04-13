@@ -1,9 +1,7 @@
+<!DOCTYPE html><!--0405-->
 
-	{% extends 'base.html' %}
-
-		{% block title %}导入文件__上海市高中自主招生信息收集系统-- 李元祎{% endblock %} 
-	
-{% block customerstyle %}
+<html>
+	<head>
 		<link rel="stylesheet" type="text/css" href="/static/boot.css">
 		<!--
 		<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
@@ -25,14 +23,15 @@
 		<!-- 可选的Bootstrap主题文件（一般不使用） -->
 		<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap-theme.min.css"></script>
  
-
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
  
 		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="/static/bootstrap-theme.min.css">
 		
-
+		<title> 上海市高中自主招生信息收集系统 </title>
 
 		<style type="text/css">
 
@@ -75,10 +74,42 @@
 
 		</style>
 
-{% endblock %}
 
-		{% block content %}
 
+
+
+	</head>
+
+	<body>
+		<!--欢迎语-->
+		<h1 class="center" id="welcometitle">欢迎使用上海市高中自主招生信息收集系统！</h1>
+
+		<!--导航栏-->
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">自主招生信息收集系统</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">信息查询</a></li>
+					<li><a href="#">信息统计</a></li>
+					<!--导出-下拉菜单-->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							导出
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">导出为excel文件</a></li>
+							<li><a href="#">导出为xml文件</a></li>
+							<li class="divider"></li>
+							<li><a href="#">导出为其他格式</a></li>
+						</ul>
+					</li>
+					<li><a href="/import/"><abbr title="从Excel文件导入到系统">导入</abbr></a></li>
+				</ul>
+			</div>
+		</nav>
 		<ul class="nav nav-pills">
  			<li role="presentation" class="dropdown">
     			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -104,55 +135,17 @@
 				</ul>
 			</div>
 		</div>
-		<!--垂直（基本）表单-->
 		<div class="container">
 			<form role="form">
-				<div class="form-group">
-					<label for="name">名称</label>
-					<input type="text" class="form-control" id="name" placeholder="请输入名称">
-				</div>
-				<div class="form-group">
-					<label for="inputfile">文件输入</label>
-					<input type="file" id="inputfile">
-					<p class="help-block">这里是块级帮助文本</p>
-				</div>
-				<div class="checkbox">
-					请打勾
-					<label>
-						<input type="checkbox">
-						请打勾
-					</label>
-				</div>
-				<button type="submit" class="btn btn-default">
-					提交
-				</button>
+				<div></div>
 			</form>
 			<button type="button" class="btn btn-default">导入</button>
 		</div>
-		
-		<!--内联表单-->
-		<div class="container">
-			<form class="form-inline" role="form">
-   				<div class="form-group">
-     			 	<label class="sr-only" for="name">名称</label>
-      				<input type="text" class="form-control" id="name" placeholder="请输入名称">
-   				</div>
-   				<div class="form-group">
-      				<label class="sr-only" for="inputfile">文件输入</label>
-      				<input type="file" id="inputfile">
-   				</div>
-   				<div class="checkbox">
-      				<label>
-      					<input type="checkbox"> 请打勾
-      				</label>
-   				</div>
-   				<button type="submit" class="btn btn-default">提交</button>
-			</form>
-		</div>
 
-		<footer class="footer">
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
-      </div>
-    </footer>
-		{% endblock %}
+	</body>
+
+
+
+
+
+</html>

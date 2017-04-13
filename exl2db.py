@@ -6,7 +6,7 @@
 #function：读excel文件中的数据,存到Django自带数据库
 #######################################################
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE","mysite.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE","bysj.settings")
 import django
 django.setup()
 
@@ -22,7 +22,7 @@ def rdtxt():
 	f.close()
 
 def rdexl():
-	from blog.models import Enrollinfo
+	from datatable.models import enroll
 	rdworkbook = xlrd.open_workbook(r"blogexcel.xlsx")
 	all_sheets_list = rdworkbook.sheet_names()
 	#print("All sheets namme in File:",all_sheets_list)
@@ -35,7 +35,7 @@ def rdexl():
 		row = info_sheet.row_values(curr_row)
 		from_sch,stu_num,stu_name,into_sch = row[0],row[1],row[2],row[3]
 		#print('%s from %s whose num is %s go into %s' %(stu_name,from_sch,stu_num,into_sch))
-		Enrollinfo.objects.get_or_create(from_sch = from_sch,stu_num = stu_num,stu_name = stu_name,into_sch = into_sch)
+		enroll.objects.get_or_create(from_sch = from_sch,stu_num = stu_num,stu_name = stu_name,into_sch = into_sch)
 		#print('row%s is %s' %(curr_row,row))
 		#print('------------row%s has been saved to db!------------' %curr_row)
 
@@ -55,5 +55,4 @@ def main():
 
 if __name__ =="__main__":
 	main()
-	return True
 	#print('Done!')	
