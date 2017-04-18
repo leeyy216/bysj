@@ -18,6 +18,7 @@ from django.contrib import admin
 from index import views as index_views
 from importfile import views as importfile_views
 from exportfile import views as exportfile_views
+from datatable import views as datatable_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^home/', index_views.index, name='index'),
     url(r'^import/', importfile_views.importfile, name='importfile'),
     url(r'^export/', exportfile_views.exportfile, name='exportfile'),
-    
+    #url(r'^test1/',datatable_views.test1, name='test1' ),
+    #url(r'^test2/', datatable_views.test2,name='test2')
 
 ] #+ static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

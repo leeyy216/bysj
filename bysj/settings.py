@@ -124,3 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+def setup_django_environment(path):
+    import imp, os, sys
+    from django.core.management import setup_django_environ
+    m = imp.load_module('settings',*imp.find_module('settings',[path]))
+    setup_environ(m)
+    sys.path.append(os.path.abspath(os.path.join(path,os.path.pardir)))
+
+    setup_django_environment("E:\\py\\bysj")

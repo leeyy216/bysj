@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}The Sequence{% endblock %}
+
+{% block content %}
+	<DIV>
+		<form action="/test1/" method="post">
+			<!-- 蓝色字体为表单代码，此处的method为post，action为url中定义的/count_sequence/表示调用的是views里的count_seq函数，注意要相互对应。 -->
+			<textarea rows="8" cols="80" name="seq_a" >{{ seq_a|escape }}</textarea>
+			<br>
+			<!-- 注意名称，直接导致向函数传值 -->
+				需要查询的片段：<input type="text" name="seq_c" value="{{ seq_c|escape }}">
+			<br/>
+			<input type="submit" value="提交">
+		</form>
+	</DIV>
+
+	<!-- 青色字体为表单提交后显示结果代码，红的字体均为函数render_to_response传回的值 -->
+
+	{% if seq_a and seq_c %}
+
+		<h2>您要统计序列中,{{ seq_c|escape }}的结果为：</h2>
+
+		序列中拥有需要统计的序列"{{ seq_c|escape }}"总共有{{ seq_count|escape }}条<br>
+
+		它们的位置分别为：{{ seq_positions|escape }}
+
+	{% endif %}
+
+{% endblock %}
