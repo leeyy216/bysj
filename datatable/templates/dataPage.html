@@ -1,157 +1,142 @@
+<!--0421-->
+{% extends 'base.html' %}
 
-	{% extends 'base.html' %}
+{% block title %}信息列表__上海市高中自主招生信息收集系统{% endblock %} 
 
-		{% block title %}数据列表__上海市高中自主招生信息收集系统-- 李元祎{% endblock %} 
-	
-		{% block customerstyle %}
-		<link rel="stylesheet" type="text/css" href="/static/boot.css">
-		<!--
-		<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
-		<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
-		<script src="/scripts/jquery.min.js"></script>
-		-->
+{% block content %}
 
-		<!-- Buttons 库的核心文件 -->
-		<link rel="stylesheet" type="text/css" href="../static/buttons.css">
-		<!-- 当需要使用带下拉菜单的按钮时才需要加载下面的 JavaScript 文件 -->
- 	    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-        <script type="text/javascript" src="js/buttons.js"></script>
-        <!-- 只有使用字体图标时才需要加载 Font-Awesome -->
-        <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-        <!-- 新 Bootstrap 核心 CSS 文件 -->
-		<link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
- 
-		<!-- 可选的Bootstrap主题文件（一般不使用） -->
-		<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap-theme.min.css"></script>
- 
-
-		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-		<link rel="stylesheet" type="text/css" href="/static/bootstrap-theme.min.css">
-		
-
-
-		<style type="text/css">
-
-		.img-responsive{
-			display: inline-block;
-			height: auto;
-			max-width: 100%;
-		}
-
-		body{
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-size: 14px;
-			font-weight: bold;
-			line-height: 1.428571429;
-			color: #333333;
-			background-color: #ffffff;
-			padding: 50px;
-			margin: 20px;
-		}
-
-		a:link{ font-size: 18px; color: #3d3b4f; }
-		a:visited{ color: #b35c44; }
-		a:hover{ color: #88ada6; }
-
-		.container{
-			padding-right: 15px;
-			padding-left: 15px;
-			margin-right: auto;
-			margin-left: auto;
-			width: 75%;
-		}
-		.container:before,
-		.container:after{
-			display: table;
-			content: " ";
-		}
-		.center{ text-align: center; }
-		.toright{ vertical-align: }
-
-
-		</style>
-
-		{% endblock %}
-
-		{% block content %}
-
-		<ul class="nav nav-pills">
- 			<li role="presentation" class="dropdown">
-    			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-      				Dropdown <span class="caret"></span>
-    			</a>
-   				<ul class="dropdown-menu">
-    			</ul>
-  			</li>
-		</ul>
-		<div class="container">
-			<div class="btn-group">
-				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
-					导出 
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" role="menu">
-					<li><a href="#">导出成exl</a></li>
-					<li><a href="#">导出成xml</a></li>
-					<li><a href="#">others</a></li>
-					<li class="divider"></li>
-					<li><a href="#">自定义导出</a></li>
-					
-				</ul>
+	<ul class="nav nav-pills">
+			<li role="presentation" class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+  				Dropdown <span class="caret"></span>
+			</a>
+				<ul class="dropdown-menu">
+			</ul>
+			</li>
+	</ul>
+	<div class="container">
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
+				导出 
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="#">导出成exl</a></li>
+				<li><a href="#">导出成xml</a></li>
+				<li><a href="#">others</a></li>
+				<li class="divider"></li>
+				<li><a href="#">自定义导出</a></li>
+				
+			</ul>
+		</div>
+	</div>
+	<!--垂直（基本）表单-->
+	<div class="container" >
+		<form role="form">
+			<div class="form-group">
+				<label for="name">名称</label>
+				<input type="text" class="form-control" id="name" placeholder="请输入名称">
 			</div>
-		</div>
-		<!--垂直（基本）表单-->
-		<div class="container">
-			<form role="form">
-				<div class="form-group">
-					<label for="name">名称</label>
-					<input type="text" class="form-control" id="name" placeholder="请输入名称">
-				</div>
-				<div class="form-group">
-					<label for="inputfile">文件输入</label>
-					<input type="file" id="inputfile">
-					<p class="help-block">这里是块级帮助文本</p>
-				</div>
-				<div class="checkbox">
+			<div class="form-group">
+				<label for="inputfile">文件输入</label>
+				<input type="file" id="inputfile">
+				<p class="help-block">这里是块级帮助文本</p>
+			</div>
+			<div class="checkbox">
+				请打勾
+				<label>
+					<input type="checkbox">
 					请打勾
-					<label>
-						<input type="checkbox">
-						请打勾
-					</label>
-				</div>
-				<button type="submit" class="btn btn-default">
-					提交
-				</button>
-			</form>
-			<button type="button" class="btn btn-default">导入</button>
-		</div>
-		
-		<!--内联表单-->
-		<div class="container">
-			<form class="form-inline" role="form">
-   				<div class="form-group">
-     			 	<label class="sr-only" for="name">名称</label>
-      				<input type="text" class="form-control" id="name" placeholder="请输入名称">
-   				</div>
-   				<div class="form-group">
-      				<label class="sr-only" for="inputfile">文件输入</label>
-      				<input type="file" id="inputfile">
-   				</div>
-   				<div class="checkbox">
-      				<label>
-      					<input type="checkbox"> 请打勾
-      				</label>
-   				</div>
-   				<button type="submit" class="btn btn-default">提交</button>
-			</form>
-		</div>
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">
+				提交
+			</button>
+		</form>
+		<button type="button" class="btn btn-default">导入</button>
+	</div>
+	
+	<!--内联表单-->
+	<div class="container">
+		<form class="form-inline" role="form">
+			<div class="form-group">
+			 	<label class="sr-only" for="name">名称</label>
+				<input type="text" class="form-control" id="name" placeholder="请输入名称">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="inputfile">文件输入</label>
+				<input type="file" id="inputfile">
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox"> 请打勾
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">提交</button>
+		</form>
+	</div>
 
-		<footer class="footer">
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
-      </div>
+	<!--表格及分页-->
+	<div class="bigcontainer">
+		<!--"table table-striped"条纹表格-->
+		<table class="table table-hover">
+			<caption>数据表格</caption>
+			<!--表头-->
+			<thead>
+				<tr>
+					<th>所属初中</th><!--from_sch-->
+					<th>学籍号</th><!-- stu_num -->
+					<th>学生姓名</th><!-- stu_name -->
+					<th>录取学校</th><!-- into_sch -->
+				</tr>
+			</thead>
+			<tbody>
+				{% for student in students %}
+					<tr>
+						<td>{{student.from_sch}}</td>
+						<td>{{student.stu_num}}</td>
+						<td>{{student.stu_name}}</td>
+						<td>{{student.into_sch}}</td>
+					</tr>
+        		{% endfor %}
+			</tbody>
+		</table>
+
+		<!--分页-->
+		<nav aria-label="Page navigation">
+  			<ul class="pagination">
+    			<li>
+      				<a href="#" aria-label="Previous">
+        				<span aria-hidden="true">&laquo;</span>
+      				</a>
+    			</li>
+			    <li><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+    			<li>
+     				<a href="#" aria-label="Next">
+        				<span aria-hidden="true">&raquo;</span>
+      				</a>
+    			</li>
+  			</ul>
+		</nav>
+
+		<!--翻页-->
+		<nav aria-label="...">
+  			<ul class="pager">
+  				<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+    			<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+  			</ul>
+		</nav>
+
+	</div>
+
+	<footer class="footer">
+    	<div class="container">
+        	<p class="text-muted">Place sticky footer content here.</p>
+      	</div>
     </footer>
-		{% endblock %}
+
+{% endblock %}

@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^home/', index_views.index, name='index'),
     url(r'^import/', importfile_views.importfile, name='importfile'),
     url(r'^export/', exportfile_views.exportfile, name='exportfile'),
+    url(r'^datatable/', datatable_views.table, name='datatable'),
     #url(r'^test1/',datatable_views.test1, name='test1' ),
     #url(r'^test2/', datatable_views.test2,name='test2')
 
