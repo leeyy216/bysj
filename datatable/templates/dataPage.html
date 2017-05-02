@@ -1,4 +1,4 @@
-<!--0421-->
+<!--0502-->
 {% extends 'base.html' %}
 
 {% block title %}信息列表__上海市高中自主招生信息收集系统{% endblock %} 
@@ -30,6 +30,40 @@
 			</ul>
 		</div>
 	</div>
+
+	<!-- 查询面板 -->
+	<div class="bigcontainer" id="selection">
+		<div class="panel panel-default">
+		   <div class="panel-heading">
+		      <h3 class="panel-title">
+		         查询:
+		      </h3>
+		   </div>
+		   <div class="panel-body">
+		      	<form class="form-inline" role="form">
+					<div class="form-group">
+					 	<label for="name">初中</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入初中校名">
+					</div>
+					<div class="form-group">
+					 	<label for="name">高中</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入高中校名">
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="inputfile">文件输入</label>
+						<input type="file" id="inputfile">
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 请打勾
+						</label>
+					</div>
+					<button type="submit" class="btn btn-default">提交</button>
+				</form>
+		   </div>
+		</div>
+	</div>
+
 	<!--垂直（基本）表单-->
 	<div class="container" >
 		<form role="form">
