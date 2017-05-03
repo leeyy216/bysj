@@ -24,6 +24,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url(r'^accounts/', include('users.urls')),
+    url(r'^register/', index_views.register, name='register'),
+    url(r'^login/', index_views.login, name='login'),
     url(r'^home/', index_views.index, name='index'),
     url(r'^import/', importfile_views.importfile, name='importfile'),
     url(r'^export/', exportfile_views.exportfile, name='exportfile'),

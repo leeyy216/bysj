@@ -1,0 +1,59 @@
+<!--0503-->
+{% extends 'base.html' %}
+
+{% block title %}注册__上海市高中自主招生信息收集系统{% endblock %} 
+
+{% block content %}
+
+	<!--垂直（基本）表单-->
+	<div class="container" >
+		<!--密码认证登录区-->
+		<div class="middle" >
+			<!--标题-->
+			<div class="middle" >
+				<dl class="middle" >
+					<dt  id="regpic" style="float: left;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></dt>
+					<dd style="width:270px;border-left: 2px solid #CED6DF;padding-left: 5px;line-height: 18px;margin-left: 40px;"><span>密码登录</span>
+						<br>
+						未注册用户，请先
+						<a href="../login/">注册</a>。
+					</dd>
+				</dl>
+			</div>
+			<!--输入部分-->
+			<div class="middle" >
+				<ul>
+					<li class="username li_press"><span></span>
+						<label class="txt_default" for="username" default_txt="用户名" >用户名</label>
+						<input id="username" name="username" class="input focus" type="text" />
+					</li>
+					<li class="password"><span></span>
+						<label class="txt_default" for="password" default_txt="密码" >密码</label>
+						<input id="password" name="password" class="input" value="" type="password" />
+					</li>
+				</ul>
+			</div>
+			<div class="middle" >
+				<input type="checkbox" class="checkboxCls" name="rememberPwd" value="1" id="rememberPwd" />
+				<label for="rememberPwd">记住登录状态</label>
+			</div>
+			<!--提示与反馈信息-->
+			<div class="login_box_msg shiftKey" style="display: none;">
+				<dl>
+					<dt></dt>
+					<dd>大写锁定已打开</dd>
+				</dl>
+			</div>
+			<!--登录按钮-->
+			<div class="btn_ok">
+				<div class="login_btn login_btn_ok">
+					<input id="pwd" type="hidden" name="pwd" value="">
+					<input type="hidden" name="secret" value="true">
+					<input type="submit" class="button" value="登录" />
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+{% endblock %}
