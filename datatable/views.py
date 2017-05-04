@@ -5,8 +5,10 @@ from datatable import forms
 from datatable.forms import enrollForm
 from datatable.models import enroll    #插入enroll表
 from django.shortcuts import HttpResponseRedirect,Http404,HttpResponse,render_to_response
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+#@login_required
 def datatable(request):
 	return render(request, 'dataPage.html')
 

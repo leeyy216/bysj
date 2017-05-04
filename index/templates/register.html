@@ -8,12 +8,12 @@
 	<!--垂直（基本）表单-->
 	<div class="container" >
 		<!--密码认证登录区-->
-		<div class="middle" >
+		<div class="col-md-4 col-md-offset-4" >
 			<!--标题-->
 			<div class="middle" >
-				<dl class="middle" >
+				<dl>
 					<dt  id="regpic" style="float: left;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></dt>
-					<dd style="width:270px;border-left: 2px solid #CED6DF;padding-left: 5px;line-height: 18px;margin-left: 40px;"><span>密码登录</span>
+					<dd style="width:270px;border-left: 2px solid #CED6DF;padding-left: 5px;line-height: 18px;margin-left: 40px;"><span>用户注册</span>
 						<br>
 						已注册用户，请使用用户名密码
 						<a href="../login/">登录</a>。
@@ -22,16 +22,22 @@
 			</div>
 			<!--输入部分-->
 			<div class="middle" >
-				<ul>
+				<form method = "post" enctype="multipart/form-data" >
+					{% csrf_token %}
+
+					{{uf.as_p}}
+					<input type="submit" class="button" value="注册" />
+				</form>
+				<form>
 					<li class="username li_press"><span></span>
-						<label class="txt_default" for="username" default_txt="用户名" >用户名</label>
+						<label class="txt_default" for="username" default_txt="用户名" >用户名 </label>
 						<input id="username" name="username" class="input focus" type="text" />
 					</li>
 					<li class="password"><span></span>
-						<label class="txt_default" for="password" default_txt="密码" >密码</label>
+						<label class="txt_default" for="password" default_txt="密码" >密码  </label>
 						<input id="password" name="password" class="input" value="" type="password" />
 					</li>
-				</ul>
+				</form>
 			</div>
 
 			<!--提示与反馈信息-->

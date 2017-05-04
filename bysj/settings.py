@@ -47,13 +47,15 @@ INSTALLED_APPS = [
     'users'
 ]
 
-AUTH_USER_MODEL = 'users.User'
+#AUTH_USER_MODEL = 'users.User'
 
 USERS_VERIFY_EMAIL = True
 
 USERS_AUTO_LOGIN_ON_ACTIVATION = True
 
 USERS_EMAIL_CONFIRMATION_TIMEOUT_DAYS = 3
+
+LOGIN_URL = '/login/'   #login_required 装饰器未登录时跳转到登录界面
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
